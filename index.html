@@ -1,49 +1,115 @@
 ---
-layout: default
+layout: portfolio
 ---
 
-<div class="posts">
-  {% for post in paginator.posts %}
-    <article class="post">
-      <a href="{{ site.baseurl }}{{ post.url }}">
-        <h1>{{ post.title }}</h1>
-
-        <div>
-          <p class="post_date">{{ post.date | date: "%B %e, %Y" }}</p>
-        </div>
-      </a>
-      <div class="entry">
-        {{ post.excerpt }}
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <div class="profile-section">
+        <img src="{{ site.baseurl }}/images/maya-photo.png" alt="Maya Avisar" class="profile-photo">
+                  <div class="profile-links">
+            <a href="mailto:mayaavisarma@gmail.com">mayaavisarma@gmail.com</a>
+            <a href="https://linkedin.com/in/mayaavisar" target="_blank">linkedin.com/in/mayaavisar</a>
+          </div>
       </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
-
-  <!-- pagination -->
-  {% if paginator.total_pages > 1 %}
-  <div class="pagination">
-    {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
-    {% else %}
-      <span>&laquo; Prev</span>
-    {% endif %}
-
-    {% for page in (1..paginator.total_pages) %}
-      {% if page == paginator.page %}
-        <span class="webjeda">{{ page }}</span>
-      {% elsif page == 1 %}
-        <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
-      {% else %}
-        <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
-      {% endif %}
-    {% endfor %}
-
-    {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
-    {% else %}
-      <span>Next &raquo;</span>
-    {% endif %}
+      <div class="header-content">
+        <h1>Hi, I'm Maya Avisar.</h1>
+        <p class="subtitle">I help early-stage founders get things done — from scrappy systems to scalable operations. Think of me as your co-founder's secret weapon: turning chaos into clarity with just enough charm and just enough command-line.</p>
+      </div>
+    </div>
   </div>
-  {% endif %}
-</div>
+</header>
+
+<section>
+  <div class="container">
+    <p>I solve problems that don't come with instructions. From leading operations at fast-moving startups to building AI-powered tools, I turn ambiguity into action and ideas into systems.</p>
+    
+    <p>What drives me is ownership. I'm not after checklists — I want responsibility, freedom, and the messy stuff no one else wants. I thrive when I get to solve, not just execute.</p>
+    
+    <p>I'm looking to join an early-stage team that needs a grounded, curious, get-things-done kind of operator.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>What I Do</h2>
+    <div class="skills-list">
+      <div class="skill-item">
+        <h3>Strategy Meets Delivery</h3>
+        <p>I bridge R&D, business, and processes — turning vague business needs into scalable workflows, tools, or features. You get both big-picture thinking and day-to-day ownership.</p>
+      </div>
+      
+      <div class="skill-item">
+        <h3>Startup Ops & Execution</h3>
+        <p>From zero to functioning systems, I've built and implemented tools and processes that fill the gaps no one else owns. Customer onboarding flows, support ops, dashboards — whatever the business needs to move forward fast (and without hand-holding).</p>
+      </div>
+      
+      <div class="skill-item">
+        <h3>Technical Fluency</h3>
+        <p>I'm not a developer, but I know enough to build what's needed — whether it's a quick MVP in Flask, a PostgreSQL query, a dashboard powered by automations, or integrating with APIs and MCP servers. Just enough code to move fast and unblock others.</p>
+      </div>
+      
+      <div class="skill-item">
+        <h3>Working Smarter with AI</h3>
+        <p>I use advanced GenAI tools to do pretty much everything; build solutions, automate operations, generate insights — making myself 100x more effective.</p>
+      </div>
+      
+      <div class="skill-item">
+        <h3>People & Cross-Team Glue</h3>
+        <p>I make sure things don't fall through the cracks. I communicate well with technical and non-technical people alike, and keep the business moving forward without the drama.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="projects-section">
+  <div class="container">
+    <h2>Featured Projects</h2>
+    
+    <h3>Work Projects</h3>
+    
+    <div class="project-item">
+      <h4>Commercial Strategy & PMI Implementation</h4>
+      <p>Led post-merger integration at a unicorn startup, combining three acquisitions and multiple commercial teams into one unified commercial structure. Owned commercial strategy execution across product lines, teams, and go-to-market motions.</p>
+    </div>
+    
+    <div class="project-item">
+      <h4>Business Development Pipeline Strategy</h4>
+      <p>Built a scalable pipeline strategy that supported an 8-figure revenue stream. Translated business priorities into repeatable deal flows and tracking systems.</p>
+    </div>
+    
+    <div class="project-item">
+      <h4>CS Infrastructure from Scratch</h4>
+      <p>Designed and implemented customer success systems, tools, and playbooks at a post-seed startup. Laid the foundation for scaling from hundreds to thousands of customers, including onboarding flows and retention ops.</p>
+    </div>
+    
+    <div class="project-item">
+      <h4>Production Operations Scaling</h4>
+      <p>Created and automated a stage-by-stage production pipeline. Built internal tooling and methodology for validating new themes, streamlining prompts, generating content, and publishing at scale — enabling rapid growth with minimal overhead.</p>
+    </div>
+
+    <h3>Personal Projects</h3>
+    
+    <div class="project-item">
+      <h4>WhatsApp Coupon Bot</h4>
+      <p>Built an AI-powered WhatsApp bot using Flask + PostgreSQL to help users find deals from local businesses. Included fuzzy search, analytics, and a custom-built admin panel.</p>
+    </div>
+    
+    <div class="project-item">
+      <h4>Lovecode</h4>
+      <p>A gamified, personalized wedding website service — complete with QR-coded stations across venues, interactive guest experiences, and creative data collection for couples. Concept → product → launch: all self-built.</p>
+    </div>
+    
+    <div class="project-item">
+      <h4>Granot Gives</h4>
+      <p>Launched a national logistics operation to match families in need (after the Iran attacks) with donated goods from across Israel. Built routing logic, coordinated volunteers, and ran operations entirely via Google Sheets + WhatsApp automation.</p>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2025 Maya Avisar, powered by magical unicorn dust and my AI helpers</p>
+  </div>
+</footer>
