@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.name }}</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.title = "Maya Avisar - Full-Stack Operations";
+        });
+    </script>
+    <link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/favicon-16x16.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
@@ -36,14 +44,17 @@
             padding: 50px 0;
         }
         
-        .header-inner {
+        .header .container {
             display: flex;
-            align-items: center;
-            gap: 40px;
+            flex-direction: column;
+            gap: 30px;
         }
         
         .profile-section {
             flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
             text-align: left;
         }
         
@@ -52,9 +63,23 @@
             height: 140px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 16px;
+            flex-shrink: 0;
             display: block;
             box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .profile-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            margin: 0;
+            line-height: 1.3;
         }
         
         .profile-links {
@@ -232,14 +257,16 @@
                 padding: 0 20px;
             }
             
-            .header-inner {
-                flex-direction: column;
-                text-align: left;
+            .header .container {
                 gap: 24px;
             }
             
             .header {
                 padding: 40px 0 30px;
+            }
+            
+            .header-content {
+                width: 100%;
             }
             
             .header-content h1 {
@@ -251,6 +278,8 @@
                 align-items: center;
                 gap: 16px;
                 text-align: left;
+                flex-direction: row;
+                width: 100%;
             }
             
             .profile-photo {
@@ -259,9 +288,18 @@
                 margin-bottom: 0;
             }
             
+            .profile-info {
+                flex: 1;
+            }
+            
+            .profile-name {
+                font-size: 1rem;
+                line-height: 1.2;
+                margin-bottom: 4px;
+            }
+            
             .profile-links {
                 text-align: left;
-                flex: 1;
             }
             
             section {
