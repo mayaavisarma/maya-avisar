@@ -21,7 +21,7 @@ avatar: /images/maya-photo.png
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
-  email: maya@example.com
+  email:
   facebook:
   flickr:
   github: 
@@ -41,7 +41,6 @@ footer-links:
 disqus: 
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-google_analytics: UA-43339302-11
 
 # For newer "GA4" analytics, use the following instead of the "UA" entry above
 #google_analytics_ga4: G-GABC1DEFG
