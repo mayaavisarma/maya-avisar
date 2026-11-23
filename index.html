@@ -1,115 +1,428 @@
----
-layout: portfolio
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maya Avisar · Operations &amp; AI Automation Builder</title>
+<meta name="description" content="I build the systems behind the business: AI-powered pipelines, automations, and products. Operations leader at scale-ups, working side by side with R&amp;D, Product, and Data teams.">
+<link rel="canonical" href="https://mayaavisar.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mayaavisar.com/">
+<meta property="og:title" content="Maya Avisar · Operations &amp; AI Automation Builder">
+<meta property="og:description" content="I build the systems behind the business: AI-powered pipelines, automations, and products. I bridge business and tech.">
+<meta property="og:image" content="https://mayaavisar.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Maya Avisar · Operations &amp; AI Automation Builder">
+<meta name="twitter:description" content="I build the systems behind the business: AI-powered pipelines, automations, and products.">
+<meta name="twitter:image" content="https://mayaavisar.com/assets/og-image.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF8F5; --surface:#FFFFFF; --ink:#1A1A2E; --muted:#5B6170; --line:#E7E3DC;
+  --coral:#E4572E; --coral-ink:#C0401F; --coral-soft:#FCE9E2;
+  --radius:14px; --wide:1080px; --read:760px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--coral-ink)}
+a:hover{color:var(--ink)}
+.wrap{max-width:var(--wide);margin:0 auto;padding:0 32px}
+.read{max-width:var(--read)}
 
-<header class="header">
-  <div class="container">
-    <div class="profile-section">
-      <img src="{{ site.baseurl }}/images/maya-photo.png" alt="Maya Avisar" class="profile-photo">
-      <div class="profile-info">
-        <h2 class="profile-name">Maya Avisar<br>Full-Stack Operations</h2>
-        <div class="profile-links">
-          <a href="https://linkedin.com/in/mayaavisar" target="_blank">linkedin.com/in/mayaavisar</a>
-        </div>
-      </div>
-    </div>
-    <div class="header-content">
-      <h1>Hi, I'm Maya Avisar.</h1>
-      <p class="subtitle">I help early-stage founders get things done - from scrappy systems to scalable operations. Think of me as your co-founder's secret weapon: turning chaos into clarity with just enough charm and just enough command-line.</p>
-    </div>
+/* Top bar */
+.topbar{position:sticky;top:0;z-index:10;background:rgba(250,248,245,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{font-weight:700;text-decoration:none;color:var(--ink);letter-spacing:-.01em}
+.brand span{color:var(--coral)}
+.nav{display:flex;align-items:center;gap:22px;font-size:15px}
+.nav a{color:var(--muted);text-decoration:none;font-weight:500}
+.nav a:hover{color:var(--ink)}
+.nav .sep{color:var(--line)}
+.nav .cta{color:var(--coral-ink);font-weight:600}
+.nav .anchors{display:flex;gap:22px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid var(--ink);color:var(--ink);background:transparent;transition:all .15s ease}
+.btn:hover{background:var(--ink);color:#fff}
+.btn.primary{background:var(--coral-ink);border-color:var(--coral-ink);color:#fff}
+.btn.primary:hover{background:var(--ink);border-color:var(--ink)}
+
+/* Hero */
+.hero{padding:80px 0 64px}
+.hero .wrap{display:grid;grid-template-columns:1.35fr .9fr;gap:56px;align-items:center}
+.kicker{display:inline-block;font-size:14px;font-weight:600;color:var(--coral-ink);background:var(--coral-soft);padding:6px 12px;border-radius:999px;margin-bottom:22px}
+.hero h1{font-size:56px;line-height:1.05;font-weight:800;letter-spacing:-.03em;margin-bottom:14px}
+.hero .headline{font-size:24px;line-height:1.35;font-weight:600;letter-spacing:-.01em;margin-bottom:20px}
+.hero .headline em{font-style:normal;color:var(--coral)}
+.hero .about{color:var(--muted);font-size:18px;margin-bottom:14px;max-width:600px}
+.hero .open{font-size:15px;color:var(--muted);margin-bottom:28px}
+.hero .open strong{color:var(--ink);font-weight:600}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.photo{width:100%;height:auto;max-width:380px;aspect-ratio:1/1;object-fit:cover;border-radius:50%;justify-self:end;box-shadow:0 20px 50px -24px rgba(26,26,46,.35);outline:8px solid var(--surface)}
+
+/* Sections */
+section{padding:88px 0 0}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--coral-ink);margin-bottom:10px}
+h2{font-size:36px;line-height:1.15;font-weight:800;letter-spacing:-.025em;margin-bottom:16px}
+.lede{color:var(--muted);font-size:18px;margin-bottom:36px;max-width:680px}
+
+/* Cards */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.card h3{font-size:19px;font-weight:700;letter-spacing:-.01em;margin-bottom:8px}
+.card p{color:var(--muted);font-size:16px}
+.num{display:inline-flex;width:34px;height:34px;border-radius:10px;background:var(--coral-soft);color:var(--coral-ink);font-weight:800;align-items:center;justify-content:center;margin-bottom:16px;font-size:15px}
+.tools{margin-top:24px;font-size:14px;color:var(--muted)}
+.tools .label{font-weight:600;color:var(--ink);margin-right:6px}
+.chip{display:inline-block;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:3px 11px;margin:4px 4px 0 0;font-size:13px;color:var(--ink)}
+
+/* Case studies */
+.case{display:flex;flex-direction:column}
+.case .meta{font-size:13px;font-weight:600;color:var(--muted);margin-bottom:10px;letter-spacing:.01em}
+.case h3{font-size:22px;margin-bottom:12px}
+.case .problem{color:var(--ink);font-size:16px;margin-bottom:14px}
+.case ul{list-style:none;margin-bottom:16px}
+.case li{position:relative;padding-left:20px;color:var(--muted);font-size:15.5px;margin-bottom:8px}
+.case li::before{content:"";position:absolute;left:2px;top:10px;width:7px;height:7px;border-radius:2px;background:var(--coral)}
+.case .outcome{margin-top:auto;padding-top:14px;border-top:1px dashed var(--line);font-size:15px;color:var(--ink)}
+.case .outcome b{color:var(--coral-ink)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.tag{font-size:12px;font-weight:600;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:2px 8px;color:var(--muted)}
+
+/* How I work */
+.how{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.how ol{list-style:none;counter-reset:h}
+.how li{counter-increment:h;position:relative;padding:0 0 22px 52px;font-size:17px}
+.how li::before{content:counter(h,decimal-leading-zero);position:absolute;left:0;top:0;font-weight:800;color:var(--coral);font-size:15px;letter-spacing:.02em}
+.how li strong{display:block;font-weight:700;margin-bottom:2px}
+.how li span{color:var(--muted);font-size:16px}
+.origin{background:var(--ink);color:#F3EFEA;border-radius:var(--radius);padding:32px}
+.origin p{font-size:26px;font-weight:700;letter-spacing:-.01em;line-height:1.55;font-weight:500}
+.origin .who{margin-top:16px;font-size:14px;color:#B9B4C9;font-weight:500}
+
+/* Timeline */
+.timeline{position:relative;border-left:2px solid var(--line);margin-left:6px}
+.role{position:relative;padding:0 0 30px 28px}
+.role::before{content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--coral)}
+.role.now::before{background:var(--coral)}
+.role .when{font-size:14px;color:var(--muted);font-weight:500}
+.role h3{font-size:18px;font-weight:700;letter-spacing:-.01em}
+.role h3 .co{color:var(--coral-ink)}
+.role .ctx{font-size:14px;color:var(--muted);margin-bottom:4px}
+.role p{font-size:16px;color:var(--muted)}
+.edu{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:8px;font-size:15px;color:var(--muted)}
+.edu b{color:var(--ink);font-weight:600}
+
+
+/* Journey */
+.journey{padding-top:80px}
+.chapters{list-style:none;display:grid;grid-template-columns:repeat(6,1fr);gap:18px;position:relative;margin-top:8px}
+.chapters::before{content:"";position:absolute;left:18px;right:18px;top:18px;height:2px;background:linear-gradient(90deg,var(--coral-soft),var(--coral))}
+.chapter{position:relative;padding-top:56px}
+.chapter .dot{position:absolute;top:0;left:0;width:38px;height:38px;border-radius:50%;background:var(--bg);border:2px solid var(--coral);color:var(--coral-ink);font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+.chapter .when{font-size:12.5px;font-weight:600;color:var(--coral-ink);letter-spacing:.01em;margin-bottom:6px;line-height:1.35}
+.chapter h3{font-size:17px;font-weight:700;letter-spacing:-.01em;line-height:1.25;margin-bottom:8px}
+.chapter p:not(.when){font-size:14.5px;color:var(--muted);line-height:1.55}
+.chapter.now{background:var(--ink);border-radius:var(--radius);padding:56px 16px 18px;margin-top:-14px;margin-bottom:auto}
+.chapter.now .dot{background:var(--coral);border-color:var(--coral);color:#fff;top:14px;left:16px}
+.chapter.now h3{color:#fff}
+.chapter.now .when{color:#F6A58C}
+.chapter.now p:not(.when){color:#C9C5D6}
+.next{display:inline-block;margin-top:12px;font-size:14px;font-weight:700;color:#fff;text-decoration:none;border-bottom:2px solid var(--coral)}
+.next:hover{color:#F6A58C}
+
+/* Compact experience */
+.cv{list-style:none;border-top:1px solid var(--line)}
+.cv li{display:grid;grid-template-columns:190px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:16px}
+.cv .when{color:var(--muted);font-size:14px;font-weight:500;padding-top:2px}
+.cv b{font-weight:700}
+.cv i{font-style:normal;color:var(--muted);font-size:14px;margin-left:6px}
+.cv i::before{content:"· "}
+
+/* Contact */
+.contact{margin-top:96px;padding-top:0;background:var(--coral-soft);border-top:1px solid #F5D3C7}
+.contact .wrap{padding-top:72px;padding-bottom:72px}
+.contact h2{font-size:44px}
+.contact .lede{color:#4a4f5e}
+.contact .email{display:inline-block;font-size:24px;font-weight:700;color:var(--ink);text-decoration:none;border-bottom:3px solid var(--coral);margin-bottom:28px}
+.contact .email:hover{color:var(--coral-ink)}
+
+footer{padding:28px 0;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* Responsive */
+@media (max-width:960px){
+  .hero .wrap{grid-template-columns:1fr;gap:32px}
+  .photo{justify-self:start;max-width:220px;order:-1;outline-width:6px}
+  .grid3,.grid2,.how{grid-template-columns:1fr}
+  .how{gap:32px}
+  .nav .anchors,.nav .sep{display:none}
+  .chapters{grid-template-columns:1fr;gap:0;padding-left:0}
+  .chapters::before{left:18px;right:auto;top:18px;bottom:18px;width:2px;height:auto;background:linear-gradient(180deg,var(--coral-soft),var(--coral))}
+  .chapter{padding:0 0 28px 58px}
+  .chapter .dot{top:0}
+  .chapter.now{margin:0;padding:18px 18px 20px 58px}
+  .chapter.now .dot{top:16px;left:0}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  .hero{padding:40px 0 44px}
+  .hero h1{font-size:40px}
+  .hero .headline{font-size:20px}
+  .hero .about{font-size:17px}
+  .photo{max-width:160px}
+  section{padding-top:64px}
+  h2{font-size:28px}
+  .lede{font-size:17px}
+  .card{padding:22px}
+  .contact h2{font-size:32px}
+  .contact .email{font-size:19px}
+  .cv li{grid-template-columns:1fr;gap:2px}
+  .cv i{display:block;margin-left:0}
+  .cv i::before{content:""}
+  .btn{padding:11px 16px;font-size:14px}
+  .nav{gap:14px;font-size:14px}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top">Maya Avisar<span>.</span></a>
+    <nav class="nav" aria-label="Main">
+      <span class="anchors"><a href="#journey">Story</a><a href="#work">Work</a><a href="#how">How I work</a><a href="#experience">Experience</a></span>
+      <span class="sep">|</span>
+      <a class="cta" href="mailto:mayaavisarma@gmail.com">Email</a>
+      <a class="cta" href="https://www.linkedin.com/in/mayaavisar/" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
   </div>
 </header>
 
-<section>
-  <div class="container">
-    <p>I solve problems that don't come with instructions. From leading operations at fast-moving startups to building AI-powered tools, I turn ambiguity into action and ideas into systems.</p>
-    
-    <p>What drives me is ownership. I'm not after checklists - I want responsibility, freedom, and the messy stuff no one else wants. I thrive when I get to solve, not just execute.</p>
-    
-    <p>I'm looking to join an early-stage team that needs a grounded, curious, get-things-done kind of operator.</p>
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" style="padding-top:72px">
+  <div class="wrap">
+    <div>
+      <span class="kicker">Part operator, part builder. Allergic to chaos.</span>
+      <h1>Maya Avisar</h1>
+      <p class="headline">Building, optimizing, and automating processes with <em>humans and AI</em>.</p>
+      <p class="about">I build the systems behind the business: AI-powered pipelines, automations, and products. I bridge business and tech, with years of leading operations at scale-ups while working side by side with R&amp;D, Product, and Data teams.</p>
+      <p class="open"><strong>Open to:</strong> Operations, BizOps, Chief of Staff, GTM Ops and AI Builder roles in Tel Aviv and central Israel.</p>
+      <div class="actions">
+        <a class="btn primary" href="mailto:mayaavisarma@gmail.com">Email me</a>
+        <a class="btn" href="https://www.linkedin.com/in/mayaavisar/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <img class="photo" src="assets/maya-avisar.webp" width="480" height="480" alt="Maya Avisar">
   </div>
 </section>
 
-<section>
-  <div class="container">
-    <h2>What I Do</h2>
-    <div class="skills-list">
-      <div class="skill-item">
-        <h3>Strategy Meets Delivery</h3>
-        <p>I bridge R&D, business, and processes - turning vague business needs into scalable workflows, tools, or features. You get both big-picture thinking and day-to-day ownership.</p>
-      </div>
-      
-      <div class="skill-item">
-        <h3>Startup Ops & Execution</h3>
-        <p>From zero to functioning systems, I've built and implemented tools and processes that fill the gaps no one else owns. Customer onboarding flows, support ops, dashboards - whatever the business needs to move forward fast (and without hand-holding).</p>
-      </div>
-      
-      <div class="skill-item">
-        <h3>Technical Fluency</h3>
-        <p>I'm not a developer, but I know enough to build what's needed - whether it's a quick MVP in Flask, a PostgreSQL query, a dashboard powered by automations, or integrating with APIs and MCP servers. Just enough code to move fast and unblock others.</p>
-      </div>
-      
-      <div class="skill-item">
-        <h3>Working Smarter with AI</h3>
-        <p>I use advanced GenAI tools to do pretty much everything; build solutions, automate operations, generate insights - making myself 100x more effective.</p>
-      </div>
-      
-      <div class="skill-item">
-        <h3>People & Cross-Team Glue</h3>
-        <p>I make sure things don't fall through the cracks. I communicate well with technical and non-technical people alike, and keep the business moving forward without the drama.</p>
-      </div>
+<!-- JOURNEY: "How I got here" (replaces the old numbers row) -->
+<section class="journey" id="journey">
+  <div class="wrap">
+    <p class="eyebrow">How I got here</p>
+    <h2>From center stage to the systems behind the business.</h2>
+    <p class="lede">Every show runs on what happens backstage. Turns out that's where I like to work.</p>
+    <ol class="chapters">
+      <li class="chapter">
+        <span class="dot">01</span>
+        <p class="when">New York · 2016–2020</p>
+        <h3>On stage</h3>
+        <p>Actress, singer, and theater producer in New York, with a BFA from The New School. I also founded Alliance of Alien Artists.</p>
+      </li>
+      <li class="chapter">
+        <span class="dot">02</span>
+        <p class="when">Wazimo · 2020–2021</p>
+        <h3>Into project management</h3>
+        <p>Moved into tech in project and product operations, building the infrastructure for cross-functional project management across all teams.</p>
+      </li>
+      <li class="chapter">
+        <span class="dot">03</span>
+        <p class="when">From day one in tech</p>
+        <h3>Taught myself to code</h3>
+        <p>Learned JavaScript and PHP at Wazimo, my first startup, because I refused to be the non-technical person in the room.</p>
+      </li>
+      <li class="chapter">
+        <span class="dot">04</span>
+        <p class="when">Oribi · Perfect · OpenWeb · 2021–2025</p>
+        <h3>Early operations, at scale</h3>
+        <p>Specialized in building operations at startups and scale-ups: customer success, a CS and Sales stack from scratch, then global commercial ops.</p>
+      </li>
+      <li class="chapter">
+        <span class="dot">05</span>
+        <p class="when">Past couple of years</p>
+        <h3>Going deep on AI</h3>
+        <p>Specialized in advanced AI tools, then put them in production as Director of Operations at a stealth AI-content startup.</p>
+      </li>
+      <li class="chapter now">
+        <span class="dot">06</span>
+        <p class="when">Sep 2025 – Present</p>
+        <h3>Building on my own</h3>
+        <p>Independent AI &amp; Automation Builder, shipping apps, bots, and automations hands-on.</p>
+        <a class="next" href="#work">See what I've built ↓</a>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="work">
+  <div class="wrap">
+    <p class="eyebrow">Selected work</p>
+    <h2>Things I've built and run.</h2>
+    <p class="lede">Four projects, from a global commercial org to a WhatsApp bot. Same instinct every time: find the process, then build the system behind it.</p>
+    <div class="grid2">
+
+      <article class="card case">
+        <p class="meta">Stealth startup · Director of Operations · 2025</p>
+        <h3>An AI content production system</h3>
+        <p class="problem">A post-seed startup making AI-generated content at scale needed ideas to become finished, published videos without manual work at every step.</p>
+        <ul>
+          <li>Designed and built the production system on a headless CMS with a two-person engineering team. I owned the data model and the integrations.</li>
+          <li>Orchestrated separate AI models for visuals, audio, and subtitles into finished videos.</li>
+          <li>Shipped the live side too: automated YouTube uploads, plus tracking of comments and shares, with replies managed inside the CMS.</li>
+        </ul>
+        <!-- GAP: add a volume or time-saved number only if Maya can confirm one. -->
+        <p class="outcome"><b>Outcome:</b> shipped and used in production, while I led the animators, writers, and engineers behind it.</p>
+        <div class="tags"><span class="tag">AI orchestration</span><span class="tag">Data model</span><span class="tag">Integrations</span><span class="tag">Team lead</span></div>
+      </article>
+
+      <article class="card case">
+        <p class="meta">Independent · 2025</p>
+        <h3>FreelancerApp</h3>
+        <p class="problem">Freelancers in Israel have to set aside and pay VAT separately from what they get paid.</p>
+        <ul>
+          <li>Built a native iOS and Android finance app from a product design, in partnership with Tranzila.</li>
+          <li>The app splits the VAT as part of the payment process.</li>
+          <li>Set the architecture and built it hands-on with AI, with tests and pull requests.</li>
+        </ul>
+        <!-- GAP: app screenshots would help here. Do NOT describe it as live in the stores. -->
+        <p class="outcome"><b>Outcome:</b> once my part was complete, I handed it off to a developer to scale.</p>
+        <div class="tags"><span class="tag">Mobile app</span><span class="tag">Payments</span><span class="tag">Product build</span></div>
+      </article>
+
+      <article class="card case">
+        <p class="meta">Independent · Side project</p>
+        <h3>WhatsApp Coupon Bot → coupons hub</h3>
+        <p class="problem">Parents in large WhatsApp communities kept asking each other for discount codes for kids' products.</p>
+        <ul>
+          <li>Built a WhatsApp bot backed by a database with fuzzy search, so parents can find discount codes even when the spelling is off.</li>
+          <li>Added usage analytics to see what people search for and what's missing.</li>
+        </ul>
+        <!-- GAP: usage numbers, if Maya has them. -->
+        <p class="outcome"><b>Outcome:</b> it later grew into the coupons hub on <a href="https://youngdads.co.il/coupons/" target="_blank" rel="noopener">youngdads.co.il</a>.</p>
+        <div class="tags"><span class="tag">Bot</span><span class="tag">Database</span><span class="tag">Analytics</span></div>
+      </article>
+
+      <article class="card case">
+        <p class="meta">OpenWeb · Director of Operations · 2022–2025</p>
+        <h3>One commercial org out of three acquisitions</h3>
+        <p class="problem">A Series E company ($300M raised) was absorbing three acquisitions and needed one working commercial organization across five countries.</p>
+        <ul>
+          <li>Led strategic commercial operations globally for 300+ GTM teammates, focused on cross-functional collaboration.</li>
+          <li>Built the post-merger integration strategy and processes for the commercial departments in all three acquisitions.</li>
+          <li>Ran operations for several commercial teams through leadership changes, owning improvement projects internally and with partners.</li>
+        </ul>
+        <!-- GAP: a churn or integration-time number only if Maya can stand behind it. -->
+        <p class="outcome"><b>Outcome:</b> more streamlined growth and lower post-merger churn.</p>
+        <div class="tags"><span class="tag">PMI</span><span class="tag">Commercial ops</span><span class="tag">Global GTM</span></div>
+      </article>
+
     </div>
   </div>
 </section>
 
-<section class="projects-section">
-  <div class="container">
-    <h2>Featured Projects</h2>
-    
-    <h3>Work Projects</h3>
-    
-    <div class="project-item">
-      <h4>Commercial Strategy & PMI Implementation</h4>
-      <p>Led post-merger integration at a unicorn startup, combining three acquisitions and multiple commercial teams into one unified commercial structure. Owned commercial strategy execution across product lines, teams, and go-to-market motions.</p>
+<!-- WHAT I BUILD -->
+<section id="build">
+  <div class="wrap">
+    <p class="eyebrow">What I build</p>
+    <h2>The bridge between the business and the code.</h2>
+    <p class="lede">Ops leaders who can't build wait in the R&amp;D queue. Builders who don't know the business automate the wrong thing. I do both.</p>
+    <div class="grid3">
+      <div class="card"><span class="num">01</span><h3>Operations that scale</h3><p>Commercial operations, post-merger integration, CS and Sales infrastructure from scratch, and KPI dashboards. I own the messy middle between teams and make it run.</p></div>
+      <div class="card"><span class="num">02</span><h3>Systems and automations</h3><p>I turn vague business needs into workflows, integrations, and internal tools, working side by side with R&amp;D, Product, and Data.</p></div>
+      <div class="card"><span class="num">03</span><h3>AI-powered products</h3><p>Pipelines, bots, and apps built hands-on with advanced AI tools. I learn any new tool within minutes.</p></div>
     </div>
-    
-    <div class="project-item">
-      <h4>Business Development Pipeline Strategy</h4>
-      <p>Built a scalable pipeline strategy that supported an 8-figure revenue stream. Translated business priorities into repeatable deal flows and tracking systems.</p>
-    </div>
-    
-    <div class="project-item">
-      <h4>CS Infrastructure from Scratch</h4>
-      <p>Designed and implemented customer success systems, tools, and playbooks at a post-seed startup. Laid the foundation for scaling from hundreds to thousands of customers, including onboarding flows and retention ops.</p>
-    </div>
-    
-    <div class="project-item">
-      <h4>Production Operations Scaling</h4>
-      <p>Created and automated a stage-by-stage production pipeline. Built internal tooling and methodology for validating new themes, streamlining prompts, generating content, and publishing at scale - enabling rapid growth with minimal overhead.</p>
-    </div>
+    <!-- TOOL LIST (for Maya's review): the only place on the page that names tools. Edit or delete this block freely. -->
+    <p class="tools"><span class="label">Tools I've shipped with:</span>
+      <span class="chip">Directus</span><span class="chip">React Native</span><span class="chip">Flask</span><span class="chip">PostgreSQL</span><span class="chip">Twilio</span><span class="chip">REST APIs &amp; webhooks</span><span class="chip">Git &amp; GitHub</span><span class="chip">Salesforce</span><span class="chip">HubSpot</span><span class="chip">Tableau</span>
+    </p>
+    <!-- /TOOL LIST -->
+  </div>
+</section>
 
-    <h3>Personal Projects</h3>
-    
-    <div class="project-item">
-      <h4>WhatsApp Coupon Bot</h4>
-      <p>Built an AI-powered WhatsApp bot using Flask + PostgreSQL to help users find deals from local businesses. Included fuzzy search, analytics, and a custom-built admin panel.</p>
+<!-- HOW I WORK -->
+<section id="how">
+  <div class="wrap how">
+    <div>
+      <p class="eyebrow">How I work</p>
+      <h2>Business problem first. Tool second.</h2>
+      <ol>
+        <li><strong>Start from the problem</strong><span>I map the process and the people before I touch a tool.</span></li>
+        <li><strong>Own the architecture</strong><span>I set the architecture, direct the AI through drafts, and write tests. Pull requests even when I'm the only developer.</span></li>
+        <li><strong>Work side by side with R&amp;D</strong><span>I translate between engineering and the business, so both sides get what they actually need.</span></li>
+        <li><strong>Make it measurable</strong><span>I build the KPI dashboards that show whether a process is working. I also coach others on working smarter with AI.</span></li>
+      </ol>
     </div>
-    
-    <div class="project-item">
-      <h4>Lovecode</h4>
-      <p>A gamified, personalized wedding website service - complete with QR-coded stations across venues, interactive guest experiences, and creative data collection for couples. Concept → product → launch: all self-built.</p>
-    </div>
-    
-    <div class="project-item">
-      <h4>Granot Gives</h4>
-      <p>Launched a national logistics operation to match families in need (after the Iran attacks) with donated goods from across Israel. Built routing logic, coordinated volunteers, and ran operations entirely via Google Sheets + WhatsApp automation.</p>
+    <div class="origin">
+      <p>"I never ship code I can't explain."</p>
+      <p class="who">My one non-negotiable when building with AI.</p>
     </div>
   </div>
 </section>
 
+<!-- EXPERIENCE (compact: the story is told in "How I got here") -->
+<section id="experience">
+  <div class="wrap read">
+    <p class="eyebrow">Experience</p>
+    <h2>The résumé, in brief.</h2>
+    <ul class="cv">
+      <li><span class="when">Sep 2025 – Present</span><span class="what"><b>Independent AI &amp; Automation Builder</b></span></li>
+      <li><span class="when">May 2025 – Sep 2025</span><span class="what"><b>Director of Operations</b> · Stealth Startup <i>post-seed, AI-generated content at scale</i></span></li>
+      <li><span class="when">Dec 2022 – Apr 2025</span><span class="what"><b>Director of Operations</b> · OpenWeb <i>Series E, $300M raised</i></span></li>
+      <li><span class="when">Apr 2022 – Dec 2022</span><span class="what"><b>Customer Relations &amp; Product Ops</b> · Perfect <i>AI sourcing platform</i></span></li>
+      <li><span class="when">Aug 2021 – Apr 2022</span><span class="what"><b>Customer Solutions &amp; Success</b> · Oribi <i>acq. by LinkedIn</i></span></li>
+      <li><span class="when">Feb 2020 – Aug 2021</span><span class="what"><b>Project &amp; Product Operations</b> · Wazimo <i>acq. by MinuteMedia</i></span></li>
+      <li><span class="when">2016 – 2020</span><span class="what"><b>BFA, Musical Theatre</b> · The New School, New York</span></li>
+      <li><span class="when">2021 – 2022</span><span class="what"><b>ThePowerMBA</b> · ThePower Business School</span></li>
+    </ul>
+  </div>
+</section>
 
-<footer class="footer">
-  <div class="container">
-    <p>© 2025 Maya Avisar, powered by magical unicorn dust and my AI helpers</p>
+</main>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <p class="eyebrow">Let's talk</p>
+    <h2>Got a process that needs an owner?</h2>
+    <p class="lede">I'm looking for my next role in Operations, BizOps, Chief of Staff, GTM Ops, or AI building, in Tel Aviv and central Israel.</p>
+    <a class="email" href="mailto:mayaavisarma@gmail.com">mayaavisarma@gmail.com</a>
+    <div class="actions">
+      <a class="btn primary" href="mailto:mayaavisarma@gmail.com">Email me</a>
+      <a class="btn" href="https://www.linkedin.com/in/mayaavisar/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Maya Avisar</span>
+    <span>Hand-built by me, with a little help from my AI.</span>
   </div>
 </footer>
+
+</body>
+</html>
